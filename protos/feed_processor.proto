@@ -1,0 +1,21 @@
+// Generate by
+//   protoc -Iprotos --go_out=plugins=grpc:services/feed protos/feed_processor.proto
+//   protoc -Iprotos --python_out=services/feed --grpc_python_out=services/feed protos/feed_processor.proto
+syntax = "proto3";
+
+package feed;
+
+// The greeting service definition.
+service Feed {
+  rpc Parse (FeedRequest) returns (FeedResponse) {}
+}
+
+// The request message containing the user's name.
+message FeedRequest {
+  bytes FeedData = 1;
+}
+
+message FeedResponse {
+// Empty request for future support
+  string GUID = 1;
+}
